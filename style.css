@@ -1,0 +1,1091 @@
+/* ========================================================
+   Graduation Invitation - Custom CSS
+   Matches Figma Mobile (146:791) & Desktop (145:340) Designs
+   ======================================================== */
+
+:root {
+  --font-hand: 'Patrick Hand', cursive, sans-serif;
+  --font-vietnam: 'Be Vietnam Pro', sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --color-text-dark: #271d16;
+  --color-label-brown: #675244;
+  --color-border-subtle: #e7e5e4;
+  
+  --amber-bg: #fff7d6;
+  --amber-border: #fcd34d;
+  --amber-text: #92400e;
+  
+  --rose-bg: #fff0f0;
+  --rose-border: #fda4af;
+  --rose-text: rgba(76, 5, 25, 0.85);
+  
+  --emerald-bg: #eff8f1;
+  --emerald-border: #6ee7b7;
+  --emerald-text: #064e3b;
+  
+  --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.12);
+  --shadow-pin: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure hidden attribute always forces display none */
+[hidden],
+.modal-overlay[hidden],
+.share-panel[hidden] {
+  display: none !important;
+}
+
+html, body {
+  min-height: 100%;
+  font-family: var(--font-inter);
+  color: var(--color-text-dark);
+  background-color: #f7f5f0;
+  background-image: url('assets/paper-bg.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Fullscreen Confetti Canvas */
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Page Layout Wrapper */
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================================
+   DESKTOP STYLING (min-width: 900px)
+   ======================================================== */
+.layout-desktop {
+  display: none;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+
+@media (min-width: 900px) {
+  .layout-desktop {
+    display: block;
+  }
+  .layout-mobile {
+    display: none !important;
+  }
+}
+
+.scrapbook-grid {
+  display: grid;
+  grid-template-columns: 490px 1fr;
+  column-gap: 40px;
+  align-items: center;
+  min-height: 860px;
+}
+
+/* Left Stage Container */
+.stage-column {
+  position: relative;
+  width: 490px;
+  height: 860px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stage-container {
+  position: relative;
+  width: 490px;
+  height: 860px;
+}
+
+/* Common Layer Rules */
+.layer {
+  position: absolute;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: auto;
+}
+
+/* Desktop Exact Figma Coordinates */
+.layer-sunset {
+  left: 52px;
+  top: 167px;
+  width: 369px;
+  height: 307px;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.layer-tdtu {
+  left: 78px;
+  top: 357px;
+  width: 342px;
+  height: 220px;
+  z-index: 2;
+}
+
+.layer-flags {
+  left: 56px;
+  top: 183px;
+  width: 358px;
+  height: 66px;
+  z-index: 3;
+  transform-origin: top center;
+}
+
+.layer-graduate {
+  left: 104px;
+  top: 226px;
+  width: 249px;
+  height: 371px;
+  z-index: 4;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.layer-graduate:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.layer-flowers {
+  left: 225px;
+  top: 392px;
+  width: 144px;
+  height: 150px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.layer-bunny-right {
+  left: 386px;
+  top: 234px;
+  width: 79px;
+  height: 109px;
+  z-index: 5;
+}
+
+.layer-hamster-left {
+  left: 23px;
+  top: 306px;
+  width: 77px;
+  height: 70px;
+  z-index: 5;
+}
+
+.layer-bunny-left {
+  left: 24px;
+  top: 458px;
+  width: 135px;
+  height: 117px;
+  z-index: 5;
+}
+
+.layer-banner {
+  left: 65px;
+  top: 588px;
+  width: 325px;
+  height: 149px;
+  z-index: 6;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+}
+
+.layer-megaphone {
+  left: 0px;
+  top: 645px;
+  width: 75px;
+  height: 92px;
+  z-index: 7;
+}
+
+.layer-hamster-bottom {
+  left: 367px;
+  top: 624px;
+  width: 124px;
+  height: 106px;
+  z-index: 7;
+}
+
+/* Right Content Column */
+.content-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  max-width: 683px;
+  width: 100%;
+}
+
+/* Recipient Note Card */
+.recipient-card {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+  padding: 16px 28px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform: rotate(0.3deg);
+}
+
+.recipient-card:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.recipient-content {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.recipient-label {
+  font-family: var(--font-hand);
+  font-size: 26px;
+  color: var(--color-label-brown);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.recipient-name {
+  font-family: var(--font-vietnam);
+  font-weight: 800;
+  font-size: 36px;
+  color: var(--color-text-dark);
+  letter-spacing: -0.9px;
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+/* Pin Decoration */
+.pin-wrapper {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.pin-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+}
+
+/* Main Letter Card (Figma node 151:1113) */
+.letter-card {
+  position: relative;
+  width: 100%;
+  max-width: 683px;
+  aspect-ratio: 683 / 356;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.06));
+  transition: transform 0.25s ease;
+}
+
+.letter-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.letter-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+.letter-card-text {
+  position: absolute;
+  left: 3.4%;
+  top: 20%;
+  width: 93.1%;
+  font-family: var(--font-inter);
+  font-size: 22px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.45;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.letter-card-text p {
+  margin: 0;
+  margin-left:10px;
+}
+
+.letter-card-text p + p {
+  margin-top: 0px;
+}
+
+/* Sticky Notes Row */
+.sticky-notes-row {
+  display: flex;
+  gap: 14px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.sticky-note {
+  position: relative;
+  border-radius: 12px;
+  padding: 18px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  outline: none;
+}
+
+.sticky-note:focus-visible {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.sticky-note-time {
+  width: 200px;
+  background-color: var(--amber-bg);
+  border: 1px solid var(--amber-border);
+  transform: rotate(-1.2deg);
+}
+
+.sticky-note-location {
+  flex: 1;
+  background-color: var(--rose-bg);
+  border: 1px solid var(--rose-border);
+  transform: rotate(0.8deg);
+}
+
+.sticky-note-contact {
+  width: 200px;
+  background-color: var(--emerald-bg);
+  border: 1px solid var(--emerald-border);
+  transform: rotate(-0.9deg);
+}
+
+.sticky-note:hover {
+  transform: scale(1.04) rotate(0deg) translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Sticky Note Content */
+.note-pill {
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 3px 14px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.note-pill span {
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.pill-amber span { color: var(--amber-text); }
+.pill-rose span { color: var(--rose-text); }
+.pill-emerald span { color: var(--emerald-text); }
+
+.note-headline {
+  font-family: var(--font-inter);
+  font-weight: 900;
+  font-size: 17px;
+  color: var(--color-text-dark);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.note-subtext {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.subtext-amber { color: var(--amber-text); }
+.subtext-rose { color: var(--rose-text); }
+.subtext-emerald { color: var(--emerald-text); }
+
+.note-action-hint {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.2s ease;
+}
+
+.sticky-note:hover .note-action-hint {
+  opacity: 0.85;
+  transform: translateY(0);
+}
+
+
+/* ========================================================
+   MOBILE STYLING (max-width: 899px)
+   Matches Figma Mobile Frame 146:791 (402px x 1052px)
+   ======================================================== */
+.layout-mobile {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 16px 12px 60px;
+}
+
+.stage-container-mobile {
+  position: relative;
+  width: 100%;
+  max-width: 402px;
+  aspect-ratio: 402 / 555;
+  margin: 0 auto 10px;
+}
+
+/* Percentage-based positioning inside 402px stage */
+.m-layer {
+  position: absolute;
+  object-fit: cover;
+  user-select: none;
+}
+
+.m-layer-sunset {
+  left: 12.9%;
+  top: 11.9%;
+  width: 74.1%;
+  height: 44.8%;
+  z-index: 1;
+}
+
+.m-layer-bunny-right {
+  left: 79.1%;
+  top: 22.1%;
+  width: 15.9%;
+  height: 15.8%;
+  z-index: 5;
+}
+
+.m-layer-tdtu {
+  left: 18.2%;
+  top: 40.7%;
+  width: 68.9%;
+  height: 32.1%;
+  z-index: 2;
+}
+
+.m-layer-hamster-left {
+  left: 8.0%;
+  top: 32.8%;
+  width: 15.4%;
+  height: 10.3%;
+  z-index: 5;
+}
+
+.m-layer-flags {
+  left: 13.7%;
+  top: 14.4%;
+  width: 72.4%;
+  height: 9.5%;
+  z-index: 3;
+}
+
+.m-layer-graduate {
+  left: 23.4%;
+  top: 21.4%;
+  width: 50.2%;
+  height: 54.0%;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.m-layer-flowers {
+  left: 47.5%;
+  top: 45.8%;
+  width: 28.9%;
+  height: 22.0%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.m-layer-bunny-left {
+  left: 8.0%;
+  top: 55.7%;
+  width: 27.1%;
+  height: 17.1%;
+  z-index: 5;
+}
+
+.m-layer-banner {
+  left: 15.7%;
+  top: 75.5%;
+  width: 65.4%;
+  height: 21.6%;
+  z-index: 6;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.08));
+}
+
+.m-layer-megaphone {
+  left: 0.5%;
+  top: 83.8%;
+  width: 15.2%;
+  height: 13.3%;
+  z-index: 7;
+}
+
+.m-layer-hamster-bottom {
+  left: 75.1%;
+  top: 80.4%;
+  width: 24.9%;
+  height: 15.5%;
+  z-index: 7;
+}
+
+/* Mobile Recipient Card */
+.layout-mobile .recipient-card {
+  max-width: 360px;
+  margin: 0 auto 12px;
+  padding: 12px 18px;
+}
+
+.layout-mobile .recipient-label {
+  font-size: 19px;
+}
+
+.layout-mobile .recipient-name {
+  font-size: 26px;
+  letter-spacing: -0.6px;
+}
+
+.layout-mobile .letter-card {
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto 16px;
+  aspect-ratio: auto;
+  min-height: 235px;
+  position: relative;
+}
+
+.layout-mobile .letter-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.layout-mobile .letter-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.layout-mobile .letter-card-text {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  padding: 42px 16px 26px 16px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #000000;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.layout-mobile .letter-card-text p {
+  margin: 0;
+}
+
+.layout-mobile .letter-card-text p + p {
+  margin-top: 6px;
+}
+
+@media (min-width: 380px) and (max-width: 899px) {
+  .layout-mobile .letter-card {
+    min-height: 245px;
+  }
+  .layout-mobile .letter-card-text {
+    padding: 44px 18px 28px 18px;
+    font-size: 12.5px;
+    line-height: 1.48;
+  }
+}
+
+/* Mobile Sticky Notes */
+.layout-mobile .sticky-notes-row {
+  max-width: 402px;
+  margin: 0 auto;
+  gap: 8px;
+}
+
+.layout-mobile .sticky-note {
+  padding: 14px 6px 10px;
+}
+
+.layout-mobile .sticky-note-time {
+  width: 30%;
+  transform: rotate(-1deg);
+}
+
+.layout-mobile .sticky-note-location {
+  flex: 1;
+  transform: rotate(0.6deg);
+}
+
+.layout-mobile .sticky-note-contact {
+  width: 30%;
+  transform: rotate(-0.8deg);
+}
+
+.layout-mobile .note-pill {
+  padding: 2px 8px;
+  margin-bottom: 6px;
+}
+
+.layout-mobile .note-pill span {
+  font-size: 13px;
+}
+
+.layout-mobile .note-headline {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.layout-mobile .note-subtext {
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+
+/* ========================================================
+   ANIMATIONS & MICRO-INTERACTIONS
+   ======================================================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes float-alt {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(-3deg); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.sticker-float {
+  animation: float 3.8s ease-in-out infinite;
+}
+
+.sticker-float-alt {
+  animation: float-alt 4.2s ease-in-out infinite;
+}
+
+.sticker-wobble {
+  animation: wobble 4.5s ease-in-out infinite;
+}
+
+.sticker-wobble-alt {
+  animation: wobble 3.6s ease-in-out infinite 0.5s;
+}
+
+.sticker-pulse {
+  animation: pulse 2.8s ease-in-out infinite;
+}
+
+.sticker-bounce-slow {
+  animation: bounceSlow 3.2s ease-in-out infinite;
+}
+
+
+/* ========================================================
+   FLOATING ACTION BUTTON & SHARE TOOLBAR
+   ======================================================== */
+.floating-toolbar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+}
+
+.fab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 20px;
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.fab-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.55);
+}
+
+.fab-icon {
+  font-size: 18px;
+}
+
+/* Share Panel / Drawer */
+.share-panel {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 340px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  z-index: 1010;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.share-panel.active,
+.share-panel:not([hidden]) {
+  display: block;
+}
+
+.share-panel[hidden] {
+  display: none !important;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.panel-header h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+}
+
+.close-btn {
+  background: #f3f4f6;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+  transform: scale(1.1);
+}
+
+.panel-body label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.input-row input {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.input-row input:focus {
+  border-color: #f59e0b;
+}
+
+.action-btn {
+  background: #271d16;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+  background: #453327;
+}
+
+.share-link-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.share-link-box input {
+  flex: 1;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #6b7280;
+  outline: none;
+}
+
+.quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.tag-title {
+  font-size: 12px;
+  color: #6b7280;
+  margin-right: 2px;
+}
+
+.tag-chip {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag-chip:hover {
+  background: #fef3c7;
+  border-color: #fcd34d;
+  color: #92400e;
+}
+
+.btn-celebrate {
+  width: 100%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: all 0.2s;
+}
+
+.btn-celebrate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45);
+}
+
+/* ========================================================
+   MODAL ACTION SHEET (Contact Options)
+   ======================================================== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.modal-overlay.active,
+.modal-overlay:not([hidden]) {
+  display: flex;
+}
+
+.modal-overlay[hidden] {
+  display: none !important;
+}
+
+.modal-sheet {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+}
+
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--color-text-dark);
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-align: left;
+}
+
+.modal-option:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.option-icon {
+  font-size: 26px;
+}
+
+.option-info strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.option-info span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ========================================================
+   TOAST NOTIFICATION
+   ======================================================== */
+.toast-message {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-30px);
+  background: #1f2937;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3000;
+}
+
+.toast-message.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
