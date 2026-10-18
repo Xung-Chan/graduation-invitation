@@ -78,6 +78,11 @@
 
     document.title = `Thư mời Lễ Tốt Nghiệp - ${labelText} ${name}`;
     updateShareUrlDisplay(name);
+
+    // Remove skeleton loading state
+    document.querySelectorAll(".recipient-card").forEach((card) => {
+      card.classList.add("is-loaded");
+    });
   }
 
   function updateShareUrlDisplay(nameOrSlug) {
@@ -409,8 +414,11 @@
   // 6. DOM Initialization & Event Setup
   // ==========================================
   async function init() {
-    // 0. Load customer.json
-    await loadCustomers();
+    // 0. Load customer.json (with micro-delay for smooth skeleton presentation)
+    await Promise.all([
+      loadCustomers(),
+      new Promise((resolve) => setTimeout(resolve, 250)),
+    ]);
 
     // 1. Initial Guest Name
     const rawSlug = getSlugFromUrl() || "Nguyễn Văn A";

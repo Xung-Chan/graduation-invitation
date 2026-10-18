@@ -284,6 +284,74 @@ html, body {
   word-break: break-word;
 }
 
+/* Skeleton Loading for Recipient Card */
+.recipient-skeleton {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.skeleton-shimmer-bar {
+  background: linear-gradient(
+    90deg,
+    #ede8e1 0%,
+    #fcfbf9 50%,
+    #ede8e1 100%
+  );
+  background-size: 200% 100%;
+  animation: recipientSkeletonShimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.skeleton-label-bar {
+  width: 110px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.skeleton-name-bar {
+  width: 220px;
+  max-width: 60%;
+  height: 36px;
+  border-radius: 9px;
+}
+
+@keyframes recipientSkeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Skeleton Toggle States */
+.recipient-card:not(.is-loaded) .recipient-content {
+  display: none !important;
+}
+
+.recipient-card.is-loaded .recipient-skeleton {
+  display: none !important;
+}
+
+.recipient-card.is-loaded .recipient-content {
+  display: flex !important;
+  animation: recipientFadeIn 0.3s ease-out;
+}
+
+@keyframes recipientFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Pin Decoration */
 .pin-wrapper {
   position: absolute;
@@ -582,6 +650,21 @@ html, body {
   max-width: 360px;
   margin: 0 auto 12px;
   padding: 12px 18px;
+}
+
+.layout-mobile .recipient-skeleton {
+  gap: 10px;
+  padding: 2px 0;
+}
+
+.layout-mobile .skeleton-label-bar {
+  width: 85px;
+  height: 20px;
+}
+
+.layout-mobile .skeleton-name-bar {
+  width: 160px;
+  height: 26px;
 }
 
 .layout-mobile .recipient-label {
