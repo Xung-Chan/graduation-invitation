@@ -138,5 +138,25 @@
     "slug": "vinh-ky",
     "name": "Vịnh Kỳ",
     "personal": "bạn"
+  },
+  {
+    "slug": "di-huy",
+    "name": "Thanh Huy",
+    "personal": "dì"
+  },
+  {
+    "slug": "cau-dung",
+    "name": "Dũng",
+    "personal": "cậu"
+  },
+  {
+    "slug": "cau-ut",
+    "name": "Út Phú",
+    "personal": "cậu"
+  },
+  {
+    "slug": "mo-ut",
+    "name": "Út Thương",
+    "personal": "mợ"
   }
 ]
