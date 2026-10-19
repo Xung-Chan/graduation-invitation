@@ -132,7 +132,7 @@
   {
     "slug": "khanh-vi",
     "name": "Khánh Vi",
-    "personal": "bạn"
+    "personal": "em"
   },
   {
     "slug": "vinh-ky",
@@ -158,5 +158,15 @@
     "slug": "mo-ut",
     "name": "Út Thương",
     "personal": "mợ"
+  },
+  {
+    "slug": "nhut-phi",
+    "name": "Nhựt Phi",
+    "personal": "em"
+  },
+  {
+    "slug": "kim-nguyen",
+    "name": "Kim Nguyên",
+    "personal": "dì"
   }
 ]
