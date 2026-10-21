@@ -168,5 +168,40 @@
     "slug": "kim-nguyen",
     "name": "Kim Nguyên",
     "personal": "dì"
+  },
+  {
+    "slug": "quang-le",
+    "name": "Quang Lễ",
+    "personal": "bạn"
+  },
+  {
+    "slug": "minh-dung",
+    "name": "Minh Dũng",
+    "personal": "anh"
+  },
+  {
+    "slug": "gia-khanh",
+    "name": "Gia Khánh",
+    "personal": "bạn"
+  },
+  {
+    "slug": "tuyet-nhi",
+    "name": "Tuyết Nhi",
+    "personal": "chị"
+  },
+  {
+    "slug": "van-tai",
+    "name": "Văn Tài",
+    "personal": "anh"
+  },
+  {
+    "slug": "minh-tue",
+    "name": "Minh Tuệ",
+    "personal": "anh"
+  },
+  {
+    "slug": "tan-nghi",
+    "name": "Tấn Nghị",
+    "personal": "bạn"
   }
 ]
