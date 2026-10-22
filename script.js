@@ -17,6 +17,9 @@
     zaloUrl: "https://zalo.me/0396371201",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=%C4%90%E1%BA%A1i+h%E1%BB%8Dc+T%C3%B4n+%C4%90%E1%BB%A9c+Th%E1%BA%AFng+19+Nguy%E1%BB%85n+H%E1%BB%AFu+Th%E1%BB%8D",
+    discoveryUrl: "https://discovery.tdtu.edu.vn/",
+    parkingPdfUrl: "bo-tri-xe-le-tn.pdf",
+    parkingImgUrl: "assets/so-do-xe.jpg",
   };
 
   // ==========================================
@@ -252,6 +255,48 @@
   window.openGoogleMaps = function () {
     window.open(EVENT_INFO.mapsUrl, "_blank", "noopener,noreferrer");
     window.showToast("📍 Đang mở chỉ đường Google Maps...");
+  };
+
+  window.navigateToDiscovery = function () {
+    window.open(EVENT_INFO.discoveryUrl, "_blank", "noopener,noreferrer");
+    window.showToast("🧭 Đang mở TDTU Discovery (Bản đồ 360°)...");
+  };
+
+  window.navigateToParkingPdf = function () {
+    window.open(EVENT_INFO.parkingPdfUrl, "_blank", "noopener,noreferrer");
+    window.showToast("🚗 Đang mở sơ đồ bố trí xe (PDF)...");
+  };
+
+  window.openMapModal = function () {
+    const modal = document.getElementById("mapModal");
+    if (!modal) return;
+    modal.removeAttribute("hidden");
+    modal.classList.add("active");
+    modal.style.display = "flex";
+  };
+
+  window.closeMapModal = function () {
+    const modal = document.getElementById("mapModal");
+    if (!modal) return;
+    modal.setAttribute("hidden", "");
+    modal.classList.remove("active");
+    modal.style.display = "none";
+  };
+
+  window.openParkingPreviewModal = function () {
+    const modal = document.getElementById("parkingPreviewModal");
+    if (!modal) return;
+    modal.removeAttribute("hidden");
+    modal.classList.add("active");
+    modal.style.display = "flex";
+  };
+
+  window.closeParkingPreviewModal = function () {
+    const modal = document.getElementById("parkingPreviewModal");
+    if (!modal) return;
+    modal.setAttribute("hidden", "");
+    modal.classList.remove("active");
+    modal.style.display = "none";
   };
 
   window.copyPhoneNumber = function () {
@@ -490,9 +535,9 @@
     const noteLocationDesktop = document.getElementById("noteLocationDesktop");
     const noteLocationMobile = document.getElementById("noteLocationMobile");
     if (noteLocationDesktop)
-      noteLocationDesktop.addEventListener("click", window.openGoogleMaps);
+      noteLocationDesktop.addEventListener("click", window.openMapModal);
     if (noteLocationMobile)
-      noteLocationMobile.addEventListener("click", window.openGoogleMaps);
+      noteLocationMobile.addEventListener("click", window.openMapModal);
 
     const noteContactDesktop = document.getElementById("noteContactDesktop");
     const noteContactMobile = document.getElementById("noteContactMobile");
@@ -501,7 +546,7 @@
     if (noteContactMobile)
       noteContactMobile.addEventListener("click", window.openContactModal);
 
-    // 5. Contact Modal
+    // 5. Contact & Map Modals
     const closeModalBtn = document.getElementById("closeModalBtn");
     if (closeModalBtn)
       closeModalBtn.addEventListener("click", window.closeContactModal);
@@ -510,6 +555,24 @@
     if (contactModal) {
       contactModal.addEventListener("click", (e) => {
         if (e.target === contactModal) window.closeContactModal();
+      });
+    }
+
+    const closeMapModalBtn = document.getElementById("closeMapModalBtn");
+    if (closeMapModalBtn)
+      closeMapModalBtn.addEventListener("click", window.closeMapModal);
+
+    const mapModal = document.getElementById("mapModal");
+    if (mapModal) {
+      mapModal.addEventListener("click", (e) => {
+        if (e.target === mapModal) window.closeMapModal();
+      });
+    }
+
+    const parkingPreviewModal = document.getElementById("parkingPreviewModal");
+    if (parkingPreviewModal) {
+      parkingPreviewModal.addEventListener("click", (e) => {
+        if (e.target === parkingPreviewModal) window.closeParkingPreviewModal();
       });
     }
 
@@ -562,6 +625,8 @@
       if (e.key === "Escape") {
         window.closeSharePanel();
         window.closeContactModal();
+        window.closeMapModal();
+        window.closeParkingPreviewModal();
       }
     });
 

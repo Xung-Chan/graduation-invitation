@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Thư mời Lễ Tốt Nghiệp</title>
-  
+
   <!-- SEO & Open Graph Meta Tags -->
-  <meta name="description" content="Thư mời tham dự Lễ Tốt Nghiệp tại Trường Đại học Tôn Đức Thắng. Sự hiện diện của bạn là niềm vinh hạnh lớn nhất đối với mình!" />
+  <meta name="description"
+    content="Thư mời tham dự Lễ Tốt Nghiệp tại Trường Đại học Tôn Đức Thắng. Sự hiện diện của bạn là niềm vinh hạnh lớn nhất đối với mình!" />
   <meta name="author" content="Graduation Invitation" />
   <meta property="og:title" content="Thư mời tham dự Lễ Tốt Nghiệp" />
   <meta property="og:description" content="Đến chung vui và chia sẻ niềm hạnh phúc này trong buổi lễ tốt nghiệp nhé!" />
   <meta property="og:image" content="assets/graduate-boy.png" />
   <meta property="og:type" content="website" />
-  
+
   <link rel="icon" type="image/png" href="assets/graduate-boy.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@400;500;600;700;800;900&family=Patrick+Hand&display=swap" 
-    rel="stylesheet" 
-  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@400;500;600;700;800;900&family=Patrick+Hand&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <!-- Canvas Confetti Effect -->
   <canvas id="confettiCanvas"></canvas>
@@ -33,48 +35,54 @@
     <!-- Desktop Layout Container (min-width: 900px) -->
     <div class="layout-desktop" id="desktopView">
       <div class="scrapbook-grid">
-        
+
         <!-- Left Column: Character & Collage Stage -->
         <section class="stage-column" aria-label="Hình ảnh kỷ niệm và nhân vật tốt nghiệp">
           <div class="stage-container" id="desktopStage">
             <!-- 1. Sunset background photo -->
             <img src="assets/sunset-bg.png" alt="Bầu trời hoàng hôn TDTU" class="layer layer-sunset" />
-            
+
             <!-- 2. TDTU Building -->
             <img src="assets/tdtu-building.png" alt="Trường Đại học Tôn Đức Thắng" class="layer layer-tdtu" />
-            
+
             <!-- 3. Graduation bunting flags garland -->
-            <img src="assets/graduation-flags.png" alt="Cờ chữ GRADUATION" class="layer layer-flags sticker-bounce-slow" />
-            
+            <img src="assets/graduation-flags.png" alt="Cờ chữ GRADUATION"
+              class="layer layer-flags sticker-bounce-slow" />
+
             <!-- 4. Graduate boy cartoon character -->
-            <img src="assets/graduate-boy.png" alt="Tân cử nhân tốt nghiệp" class="layer layer-graduate interactive-boy" id="boyDesktop" onclick="launchConfetti(); showToast('🎓 Chúc mừng Tân Cử Nhân!');" title="Nhấp vào mình để bắn pháo hoa nè!" />
-            
+            <img src="assets/graduate-boy.png" alt="Tân cử nhân tốt nghiệp" class="layer layer-graduate interactive-boy"
+              id="boyDesktop" onclick="launchConfetti(); showToast('🎓 Chúc mừng Tân Cử Nhân!');"
+              title="Nhấp vào mình để bắn pháo hoa nè!" />
+
             <!-- 5. Flower bouquet -->
             <img src="assets/flowers.png" alt="Bó hoa chúc mừng" class="layer layer-flowers" />
-            
+
             <!-- 6. Cute Bunny Top-Right -->
             <img src="assets/bunny-right.png" alt="Chú thỏ dễ thương" class="layer layer-bunny-right sticker-float" />
-            
+
             <!-- 7. Cute Hamster Left -->
-            <img src="assets/hamster-left.png" alt="Chuột hamster trắng" class="layer layer-hamster-left sticker-wobble" />
-            
+            <img src="assets/hamster-left.png" alt="Chuột hamster trắng"
+              class="layer layer-hamster-left sticker-wobble" />
+
             <!-- 8. Bunny Bottom-Left -->
-            <img src="assets/bunny-left.png" alt="Thỏ hồng dễ thương" class="layer layer-bunny-left sticker-float-alt" />
-            
+            <img src="assets/bunny-left.png" alt="Thỏ hồng dễ thương"
+              class="layer layer-bunny-left sticker-float-alt" />
+
             <!-- 9. Torn paper banner: Thư mời tham dự Lễ Tốt Nghiệp -->
             <img src="assets/banner-invitation.png" alt="Thư mời tham dự Lễ Tốt Nghiệp" class="layer layer-banner" />
-            
+
             <!-- 10. Megaphone Alert -->
             <img src="assets/megaphone.png" alt="Loa thông báo" class="layer layer-megaphone sticker-pulse" />
-            
+
             <!-- 11. Hamster Bottom-Right -->
-            <img src="assets/hamster-bottom-right.png" alt="Hamster lè lưỡi cute" class="layer layer-hamster-bottom sticker-wobble-alt" />
+            <img src="assets/hamster-bottom-right.png" alt="Hamster lè lưỡi cute"
+              class="layer layer-hamster-bottom sticker-wobble-alt" />
           </div>
         </section>
 
         <!-- Right Column: Invitation Content & Sticky Notes -->
         <section class="content-column" aria-label="Nội dung thiệp mời">
-          
+
           <!-- Recipient Note Card -->
           <div class="recipient-card note-card" id="recipientDesktop">
             <div class="pin-wrapper" aria-hidden="true">
@@ -97,16 +105,20 @@
               <img src="assets/invitation-bg.png" alt="Khung thiệp mời" class="letter-bg-image" />
             </div>
             <div class="letter-card-text">
-              <p>Đến chung vui, chia sẻ niềm hạnh phúc và tự hào này với mình trong buổi lễ tốt nghiệp sắp tới. Sự hiện diện của bạn sẽ là món quà ý nghĩa nhất, khép lại một hành trình và mở ra chặng đường mới đầy hy vọng.</p>
-              <p>Mình biết ơn và trân trọng từng khoảng khắc có bạn bên cạnh - hy vọng sẽ gặp bạn trong ngày đặc biệt này!</p>
+              <p>Đến chung vui, chia sẻ niềm hạnh phúc và tự hào này với mình trong buổi lễ tốt nghiệp sắp tới. Sự hiện
+                diện của bạn sẽ là món quà ý nghĩa nhất, khép lại một hành trình và mở ra chặng đường mới đầy hy vọng.
+              </p>
+              <p>Mình biết ơn và trân trọng từng khoảng khắc có bạn bên cạnh - hy vọng sẽ gặp bạn trong ngày đặc biệt
+                này!</p>
             </div>
           </div>
 
           <!-- Sticky Notes Row -->
           <div class="sticky-notes-row" id="stickyNotesDesktop">
-            
+
             <!-- Note 1: Thời gian -->
-            <div class="sticky-note sticky-note-time" id="noteTimeDesktop" onclick="addToGoogleCalendar()" role="button" tabindex="0" title="Nhấp để thêm vào Google Calendar">
+            <div class="sticky-note sticky-note-time" id="noteTimeDesktop" onclick="addToGoogleCalendar()" role="button"
+              tabindex="0" title="Nhấp để thêm vào Google Calendar">
               <div class="pin-wrapper" aria-hidden="true">
                 <img src="assets/pin.svg" alt="Ghim đỏ" class="pin-icon" />
               </div>
@@ -119,7 +131,8 @@
             </div>
 
             <!-- Note 2: Địa điểm -->
-            <div class="sticky-note sticky-note-location" id="noteLocationDesktop" onclick="openGoogleMaps()" role="button" tabindex="0" title="Nhấp để xem đường đi trên Google Maps">
+            <div class="sticky-note sticky-note-location" id="noteLocationDesktop" onclick="openMapModal()"
+              role="button" tabindex="0" title="Nhấp để xem bản đồ & sơ đồ bãi đỗ xe">
               <div class="pin-wrapper" aria-hidden="true">
                 <img src="assets/pin.svg" alt="Ghim đỏ" class="pin-icon" />
               </div>
@@ -128,11 +141,12 @@
               </div>
               <div class="note-headline">ĐH Tôn đức thắng</div>
               <div class="note-subtext subtext-rose">19 Nguyễn Hữu Thọ, Phường Tân Hưng, Hồ Chí Minh</div>
-              <div class="note-action-hint">📍 Mở Google Maps</div>
+              <div class="note-action-hint">🗺️ Bản đồ & Bãi đỗ xe</div>
             </div>
 
             <!-- Note 3: Liên hệ -->
-            <div class="sticky-note sticky-note-contact" id="noteContactDesktop" onclick="openContactModal()" role="button" tabindex="0" title="Nhấp để gọi điện hoặc nhắn Zalo">
+            <div class="sticky-note sticky-note-contact" id="noteContactDesktop" onclick="openContactModal()"
+              role="button" tabindex="0" title="Nhấp để gọi điện hoặc nhắn Zalo">
               <div class="pin-wrapper" aria-hidden="true">
                 <img src="assets/pin.svg" alt="Ghim đỏ" class="pin-icon" />
               </div>
@@ -145,6 +159,63 @@
             </div>
 
           </div>
+          <!-- Dòng note hướng dẫn gửi xe -->
+          <div class="parking-guide-note" role="note" aria-label="Hướng dẫn chọn nơi gửi xe">
+            <span class="parking-guide-icon" aria-hidden="true">💡</span>
+            <div class="parking-guide-text">
+              <strong>Hướng dẫn gửi xe:</strong> Trường hợp các bạn vào bằng cổng 5,7 thì các bạn gửi xe ở 1 trong các
+              tòa: D, F, M, Nhà thi đấu. Trường hợp các bạn vào bằng cổng VFIS( cổng 8, 9) thì các bạn gửi xe theo hướng
+              dẫn của bảo vệ cổng nha. Bản đồ mình để bên dưới:
+            </div>
+          </div>
+          <div class="map-nav-actions">
+            <!-- Button 1: Navigate to https://discovery.tdtu.edu.vn/ -->
+            <a href="https://discovery.tdtu.edu.vn/" target="_blank" rel="noopener noreferrer"
+              class="nav-action-btn btn-nav-discovery" id="btnDiscoveryDesktop"
+              onclick="navigateToDiscovery(); return true;" title="Khám phá toàn cảnh 360° ĐH Tôn Đức Thắng">
+              <div class="btn-visual-icon icon-sky">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <div class="btn-text-block">
+                <div class="btn-heading">
+                  <span class="btn-name">Xem bản đồ TDTU</span>
+                  <span class="nav-badge badge-sky">360° 🌐</span>
+                </div>
+                <span class="btn-sub">discovery.tdtu.edu.vn</span>
+              </div>
+              <span class="btn-action-icon" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- Button 2: Navigate to bo-tri-xe-le-tn.pdf -->
+            <a href="bo-tri-xe-le-tn.pdf" target="_blank" rel="noopener noreferrer"
+              class="nav-action-btn btn-nav-parking" id="btnParkingDesktop"
+              onclick="navigateToParkingPdf(); return true;" title="Xem sơ đồ bố trí bãi đỗ xe Lễ Tốt Nghiệp">
+              <div class="btn-visual-icon icon-rose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h2">
+                  </path>
+                  <circle cx="7" cy="17" r="2"></circle>
+                  <path d="M9 17h6"></path>
+                  <circle cx="17" cy="17" r="2"></circle>
+                </svg>
+              </div>
+              <div class="btn-text-block">
+                <div class="btn-heading">
+                  <span class="btn-name">Xem sơ đồ gửi xe Lễ TN</span>
+                  <span class="nav-badge badge-rose">PDF 🚗</span>
+                </div>
+                <span class="btn-sub">bo-tri-xe-le-tn.pdf</span>
+              </div>
+              <span class="btn-action-icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+
+
         </section>
 
       </div>
@@ -152,41 +223,44 @@
 
     <!-- Mobile Layout Container (max-width: 899px) -->
     <div class="layout-mobile" id="mobileView">
-      
+
       <!-- Top Character & Collage Stage -->
       <section class="stage-container-mobile" id="mobileStage" aria-label="Hình ảnh tốt nghiệp">
         <!-- 1. Sunset background photo -->
         <img src="assets/sunset-bg.png" alt="Bầu trời hoàng hôn" class="m-layer m-layer-sunset" />
-        
+
         <!-- 2. TDTU Building -->
         <img src="assets/tdtu-building.png" alt="Trường ĐH Tôn Đức Thắng" class="m-layer m-layer-tdtu" />
-        
+
         <!-- 3. Graduation bunting flags garland -->
         <img src="assets/graduation-flags.png" alt="Cờ GRADUATION" class="m-layer m-layer-flags sticker-bounce-slow" />
-        
+
         <!-- 4. Graduate boy cartoon character -->
-        <img src="assets/graduate-boy.png" alt="Tân cử nhân" class="m-layer m-layer-graduate interactive-boy" id="boyMobile" onclick="launchConfetti(); showToast('🎓 Chúc mừng Tân Cử Nhân!');" title="Chạm để bắn pháo hoa!" />
-        
+        <img src="assets/graduate-boy.png" alt="Tân cử nhân" class="m-layer m-layer-graduate interactive-boy"
+          id="boyMobile" onclick="launchConfetti(); showToast('🎓 Chúc mừng Tân Cử Nhân!');"
+          title="Chạm để bắn pháo hoa!" />
+
         <!-- 5. Flower bouquet -->
         <img src="assets/flowers.png" alt="Hoa chúc mừng" class="m-layer m-layer-flowers" />
-        
+
         <!-- 6. Cute Bunny Top-Right -->
         <img src="assets/bunny-right.png" alt="Thỏ dễ thương" class="m-layer m-layer-bunny-right sticker-float" />
-        
+
         <!-- 7. Cute Hamster Left -->
         <img src="assets/hamster-left.png" alt="Chuột hamster" class="m-layer m-layer-hamster-left sticker-wobble" />
-        
+
         <!-- 8. Bunny Bottom-Left -->
         <img src="assets/bunny-left.png" alt="Thỏ con" class="m-layer m-layer-bunny-left sticker-float-alt" />
-        
+
         <!-- 9. Torn paper banner -->
         <img src="assets/banner-invitation.png" alt="Thư mời tham dự Lễ Tốt Nghiệp" class="m-layer m-layer-banner" />
-        
+
         <!-- 10. Megaphone Alert -->
         <img src="assets/megaphone.png" alt="Loa thông báo" class="m-layer m-layer-megaphone sticker-pulse" />
-        
+
         <!-- 11. Hamster Bottom-Right -->
-        <img src="assets/hamster-bottom-right.png" alt="Hamster lè lưỡi" class="m-layer m-layer-hamster-bottom sticker-wobble-alt" />
+        <img src="assets/hamster-bottom-right.png" alt="Hamster lè lưỡi"
+          class="m-layer m-layer-hamster-bottom sticker-wobble-alt" />
       </section>
 
       <!-- Recipient Note Card -->
@@ -211,16 +285,19 @@
           <img src="assets/invitation-bg.png" alt="Khung thiệp mời" class="letter-bg-image" />
         </div>
         <div class="letter-card-text">
-          <p>Đến chung vui, chia sẻ niềm hạnh phúc và tự hào này với mình trong buổi lễ tốt nghiệp sắp tới. Sự hiện diện của bạn sẽ là món quà ý nghĩa nhất, khép lại một hành trình và mở ra chặng đường mới đầy hy vọng.</p>
-          <p>Mình biết ơn và trân trọng từng khoảng khắc có bạn bên cạnh - hy vọng sẽ gặp bạn trong ngày đặc biệt này!</p>
+          <p>Đến chung vui, chia sẻ niềm hạnh phúc và tự hào này với mình trong buổi lễ tốt nghiệp sắp tới. Sự hiện diện
+            của bạn sẽ là món quà ý nghĩa nhất, khép lại một hành trình và mở ra chặng đường mới đầy hy vọng.</p>
+          <p>Mình biết ơn và trân trọng từng khoảng khắc có bạn bên cạnh - hy vọng sẽ gặp bạn trong ngày đặc biệt này!
+          </p>
         </div>
       </div>
 
       <!-- Sticky Notes Row -->
       <div class="sticky-notes-row" id="stickyNotesMobile">
-        
+
         <!-- Note 1: Thời gian -->
-        <div class="sticky-note sticky-note-time" id="noteTimeMobile" onclick="addToGoogleCalendar()" role="button" tabindex="0">
+        <div class="sticky-note sticky-note-time" id="noteTimeMobile" onclick="addToGoogleCalendar()" role="button"
+          tabindex="0">
           <div class="pin-wrapper" aria-hidden="true">
             <img src="assets/pin.svg" alt="Ghim đỏ" class="pin-icon" />
           </div>
@@ -232,7 +309,8 @@
         </div>
 
         <!-- Note 2: Địa điểm -->
-        <div class="sticky-note sticky-note-location" id="noteLocationMobile" onclick="openGoogleMaps()" role="button" tabindex="0">
+        <div class="sticky-note sticky-note-location" id="noteLocationMobile" onclick="openMapModal()" role="button"
+          tabindex="0" title="Nhấp để xem bản đồ & sơ đồ bãi đỗ xe">
           <div class="pin-wrapper" aria-hidden="true">
             <img src="assets/pin.svg" alt="Ghim đỏ" class="pin-icon" />
           </div>
@@ -241,10 +319,12 @@
           </div>
           <div class="note-headline">ĐH Tôn đức thắng</div>
           <div class="note-subtext subtext-rose">19 Nguyễn Hữu Thọ, Phường Tân Hưng, Hồ Chí Minh</div>
+          <div class="note-action-hint">🗺️ Bản đồ & Bãi đỗ xe</div>
         </div>
 
         <!-- Note 3: Liên hệ -->
-        <div class="sticky-note sticky-note-contact" id="noteContactMobile" onclick="openContactModal()" role="button" tabindex="0">
+        <div class="sticky-note sticky-note-contact" id="noteContactMobile" onclick="openContactModal()" role="button"
+          tabindex="0" title="Nhấp để gọi điện hoặc nhắn Zalo">
           <div class="pin-wrapper" aria-hidden="true">
             <img src="assets/pin.svg" alt="Ghim đỏ" class="pin-icon" />
           </div>
@@ -256,14 +336,216 @@
         </div>
 
       </div>
+      <!-- Dòng note hướng dẫn gửi xe -->
+      <div class="parking-guide-note" role="note" aria-label="Hướng dẫn chọn nơi gửi xe">
+        <span class="parking-guide-icon" aria-hidden="true">💡</span>
+        <div class="parking-guide-text">
+          <strong>Hướng dẫn gửi xe:</strong> Trường hợp các bạn vào bằng cổng 5,7 thì các bạn gửi xe ở 1 trong các tòa:
+          D,
+          F, M, Nhà thi đấu. Trường hợp các bạn vào bằng cổng VFIS( cổng 8, 9) thì các bạn gửi xe theo hướng dẫn của
+          bảo vệ cổng nha.
+        </div>
+      </div>
+      <div class="map-nav-actions">
+        <!-- Button 1: Navigate to https://discovery.tdtu.edu.vn/ -->
+        <a href="https://discovery.tdtu.edu.vn/" target="_blank" rel="noopener noreferrer"
+          class="nav-action-btn btn-nav-discovery" id="btnDiscoveryMobile" onclick="navigateToDiscovery(); return true;"
+          title="Khám phá toàn cảnh 360° ĐH Tôn Đức Thắng">
+          <div class="btn-visual-icon icon-sky">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+          </div>
+          <div class="btn-text-block">
+            <div class="btn-heading">
+              <span class="btn-name">Xem bản đồ TDTU</span>
+              <span class="nav-badge badge-sky">360° 🌐</span>
+            </div>
+            <span class="btn-sub">discovery.tdtu.edu.vn</span>
+          </div>
+          <span class="btn-action-icon" aria-hidden="true">↗</span>
+        </a>
+
+        <!-- Button 2: Navigate to bo-tri-xe-le-tn.pdf -->
+        <a href="bo-tri-xe-le-tn.pdf" target="_blank" rel="noopener noreferrer" class="nav-action-btn btn-nav-parking"
+          id="btnParkingMobile" onclick="navigateToParkingPdf(); return true;"
+          title="Xem sơ đồ bố trí bãi đỗ xe Lễ Tốt Nghiệp">
+          <div class="btn-visual-icon icon-rose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h2">
+              </path>
+              <circle cx="7" cy="17" r="2"></circle>
+              <path d="M9 17h6"></path>
+              <circle cx="17" cy="17" r="2"></circle>
+            </svg>
+          </div>
+          <div class="btn-text-block">
+            <div class="btn-heading">
+              <span class="btn-name">Xem sơ đồ gửi xe Lễ TN</span>
+              <span class="nav-badge badge-rose">PDF 🚗</span>
+            </div>
+            <span class="btn-sub">bo-tri-xe-le-tn.pdf</span>
+          </div>
+          <span class="btn-action-icon" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
 
     </div>
   </main>
 
+  <!-- Map Navigation Modal -->
+  <div class="modal-overlay" id="mapModal" hidden role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+    <div class="modal-sheet map-modal-sheet">
+      <div class="modal-header">
+        <div class="modal-header-title">
+          <span class="header-icon">🗺️</span>
+          <h3 id="mapModalTitle">Bản đồ & Chỉ đường TDTU</h3>
+        </div>
+        <button type="button" class="close-modal-btn" id="closeMapModalBtn" onclick="closeMapModal()"
+          aria-label="Đóng">×</button>
+      </div>
+      <p class="modal-subtitle">Trường ĐH Tôn Đức Thắng - 19 Nguyễn Hữu Thọ, P. Tân Hưng, Q.7, TP.HCM</p>
+
+      <div class="modal-options map-modal-options">
+        <!-- Option 1: TDTU Discovery 360 -->
+        <a href="https://discovery.tdtu.edu.vn/" target="_blank" rel="noopener noreferrer"
+          class="modal-option option-discovery" onclick="navigateToDiscovery();">
+          <span class="option-icon">🧭</span>
+          <div class="option-info">
+            <div class="option-title-badge">
+              <strong>Khám phá khuôn viên 360°</strong>
+              <span class="badge-pill pill-sky">discovery.tdtu.edu.vn 🌐</span>
+            </div>
+            <span>Bản đồ thực tế ảo 360 độ toàn cảnh khuôn viên trường TDTU</span>
+          </div>
+          <span class="option-chevron">↗</span>
+        </a>
+
+        <!-- Option 2: Sơ đồ bố trí xe PDF -->
+        <a href="bo-tri-xe-le-tn.pdf" target="_blank" rel="noopener noreferrer" class="modal-option option-parking"
+          onclick="navigateToParkingPdf();">
+          <span class="option-icon">🚗</span>
+          <div class="option-info">
+            <div class="option-title-badge">
+              <strong>Sơ đồ bãi đỗ xe Lễ Tốt Nghiệp</strong>
+              <span class="badge-pill pill-rose">File PDF 📄</span>
+            </div>
+            <span>Vị trí bãi gửi xe máy & ô tô cho phụ huynh và khách mời</span>
+          </div>
+          <span class="option-chevron">↗</span>
+        </a>
+
+        <!-- Option 2b: Quick Preview Parking Map Image -->
+        <button type="button" class="modal-option" onclick="closeMapModal(); openParkingPreviewModal();">
+          <span class="option-icon">🔍</span>
+          <div class="option-info">
+            <strong>Xem nhanh sơ đồ xe (Hình ảnh)</strong>
+            <span>Xem trực tiếp bản vẽ bố trí bãi xe mà không cần tải file PDF</span>
+          </div>
+          <span class="option-chevron">👁️</span>
+        </button>
+
+        <!-- Option 3: Google Maps Navigation -->
+        <a href="https://www.google.com/maps/search/?api=1&query=%C4%90%E1%BA%A1i+h%E1%BB%8Dc+T%C3%B4n+%C4%90%E1%BB%A9c+Th%E1%BA%AFng+19+Nguy%E1%BB%85n+H%E1%BB%AFu+Th%E1%BB%8D"
+          target="_blank" rel="noopener noreferrer" class="modal-option" onclick="openGoogleMaps();">
+          <span class="option-icon">📍</span>
+          <div class="option-info">
+            <div class="option-title-badge">
+              <strong>Chỉ đường Google Maps</strong>
+              <span class="badge-pill pill-amber">Chỉ đường</span>
+            </div>
+            <span>Dẫn đường trực tiếp qua Google Maps đến 19 Nguyễn Hữu Thọ, Q.7</span>
+          </div>
+          <span class="option-chevron">↗</span>
+        </a>
+      </div>
+
+      <div class="parking-guide-note" role="note" style="margin-top: 14px;">
+        <span class="parking-guide-icon" aria-hidden="true">💡</span>
+        <div class="parking-guide-text">
+          <strong>Lưu ý gửi xe:</strong> Trường hợp các bạn vào bằng cổng 5,7 thì các bạn gửi xe ở 1 trong các tòa: D,
+          F, M, Nhà thi đấu. Trường hợp các bạn vào bằng cổng VFIS( cổng 8, 9) thì các bạn gửi xe theo hướng dẫn của bảo
+          vệ cổng nha.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Parking Map Image Preview Lightbox Modal -->
+  <div class="modal-overlay preview-overlay" id="parkingPreviewModal" hidden role="dialog" aria-modal="true"
+    aria-labelledby="parkingPreviewTitle">
+    <div class="modal-sheet parking-preview-sheet">
+      <div class="modal-header">
+        <div class="modal-header-title">
+          <span class="header-icon">🅿️</span>
+          <h3 id="parkingPreviewTitle">Sơ đồ bố trí xe Lễ Tốt Nghiệp</h3>
+        </div>
+        <div class="modal-header-actions">
+          <a href="bo-tri-xe-le-tn.pdf" target="_blank" rel="noopener noreferrer" class="preview-download-link"
+            onclick="navigateToParkingPdf();" title="Mở file gốc PDF">
+            <span>Mở file PDF</span> ↗
+          </a>
+          <button type="button" class="close-modal-btn" onclick="closeParkingPreviewModal()"
+            aria-label="Đóng">×</button>
+        </div>
+      </div>
+      <div class="preview-img-container">
+        <img src="assets/so-do-xe.jpg" alt="Sơ đồ bố trí xe Lễ Tốt Nghiệp ĐH Tôn Đức Thắng"
+          class="parking-preview-img" />
+      </div>
+      <div class="preview-footer">
+        <p class="preview-note">💡 <strong>Lưu ý gửi xe:</strong> Trường hợp các bạn vào bằng cổng 5,7 thì gửi xe ở 1
+          trong các tòa: D, F, M, Nhà thi đấu. Trường hợp các bạn vào bằng cổng VFIS( cổng 8, 9) thì gửi xe theo hướng
+          dẫn của bảo vệ cổng nha.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contactModal" hidden role="dialog" aria-modal="true"
+    aria-labelledby="contactModalTitle">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <h3 id="contactModalTitle">💬 Thông tin liên hệ</h3>
+        <button type="button" class="close-modal-btn" id="closeModalBtn" onclick="closeContactModal()"
+          aria-label="Đóng">×</button>
+      </div>
+      <div class="modal-options">
+        <a href="tel:0396371201" class="modal-option">
+          <span class="option-icon">📞</span>
+          <div class="option-info">
+            <strong>Gọi điện thoại</strong>
+            <span>0396371201</span>
+          </div>
+          <span class="option-chevron">↗</span>
+        </a>
+        <a href="https://zalo.me/0396371201" target="_blank" rel="noopener noreferrer" class="modal-option">
+          <span class="option-icon">💬</span>
+          <div class="option-info">
+            <strong>Nhắn tin qua Zalo</strong>
+            <span>zalo.me/0396371201</span>
+          </div>
+          <span class="option-chevron">↗</span>
+        </a>
+        <button type="button" class="modal-option" id="copyPhoneModalBtn" onclick="copyPhoneNumber()">
+          <span class="option-icon">📋</span>
+          <div class="option-info">
+            <strong id="copyPhoneStatus">Sao chép số điện thoại</strong>
+            <span>0396371201</span>
+          </div>
+          <span class="option-chevron">📋</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Toast Notification -->
   <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
